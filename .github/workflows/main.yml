@@ -22,7 +22,7 @@ jobs:
       # Runs a single command using the runners shell
       - run: echo "::set-env name=tVer::v1.1.1"
         
-      - run: echo "::set-env name=cVer::v1.1.1"
+      - run: echo "::set-env name=cVer::v1.1.2"
 
       - if: env.tVer == env.cVer
         run: echo "version is the same"
