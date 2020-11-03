@@ -40,5 +40,5 @@ jobs:
           token:  ${{ secrets.GITHUB_TOKEN }}
           tag: v0.0.0
           name: test
-          body: '下载链接：\n 111 {{ env.tVer }}'
+          body: 下载链接：</br> 111 env.tVer
 
