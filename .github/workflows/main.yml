@@ -20,11 +20,19 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - run: echo "tVer=v1.1.1" >> $GITHUB_ENV
+      #- run: echo "tVer=v1.1.1" >> $GITHUB_ENV
       
-      - run: echo "cVer=v1.1.1" >> $GITHUB_ENV
+      #- run: echo "cVer=v1.1.1" >> $GITHUB_ENV
         
-      - run: echo "cVer=v1.1.2" >> $GITHUB_ENV
+      #- run: echo "cVer=v1.1.2" >> $GITHUB_ENV
+      
+      # 运行工具
+      - name: Run
+        run: |
+          ls
+          chmod 777 test
+          ./test
+          ls
 
       - if: env.tVer == env.cVer
         run: echo "version is the same"
@@ -38,7 +46,7 @@ jobs:
         uses: meeDamian/github-release@v2.0.3
         with:
           token:  ${{ secrets.GITHUB_TOKEN }}
-          tag: v0.0.1
+          tag: v0.0.2
           name: test
           body: 下载链接：</br> 111 env.tVer
 
