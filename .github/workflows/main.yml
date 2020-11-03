@@ -20,9 +20,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - run: echo "::set-env name=tVer::v1.1.1"
+      - run: echo "tVer=v1.1.1" >> $GITHUB_ENV
         
-      - run: echo "::set-env name=cVer::v1.1.2"
+      - run: echo "cVer=v1.1.1" >> $GITHUB_ENV
 
-      - if: env.tVer == env.cVer
+      - if: $tVer == $cVer
         run: echo "version is the same"
+      
+      - if: $tVer != $cVer
+        run: echo "version is different"
