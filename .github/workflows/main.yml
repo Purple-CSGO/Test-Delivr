@@ -34,7 +34,7 @@ jobs:
 
       # 运行工具
       - name: Github Release create, update, and upload assets
-        if: env.tVer == env.cVer
+        if: env.tVer != env.cVer
         uses: meeDamian/github-release@v2.0.3
         with:
           token:  ${{ secrets.GITHUB_TOKEN }}
