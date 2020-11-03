@@ -38,7 +38,7 @@ jobs:
         uses: meeDamian/github-release@v2.0.3
         with:
           token:  ${{ secrets.GITHUB_TOKEN }}
-          tag: v0.0.0
+          tag: v0.0.1
           name: test
           body: 下载链接：</br> 111 env.tVer
 
