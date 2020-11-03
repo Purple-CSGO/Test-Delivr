@@ -23,9 +23,11 @@ jobs:
       - run: echo "tVer=v1.1.1" >> $GITHUB_ENV
         
       - run: echo "cVer=v1.1.1" >> $GITHUB_ENV
+      
+      - run: echo env.tVer & echo env.cVer
 
-      - if: $tVer == $cVer
+      - if: env.tVer == env.cVer
         run: echo "version is the same"
       
-      - if: $tVer != $cVer
+      - if: env.tVer != env.cVer
         run: echo "version is different"
