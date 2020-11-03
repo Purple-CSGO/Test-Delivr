@@ -31,3 +31,14 @@ jobs:
       
       - if: env.tVer != env.cVer
         run: echo "version is different"
+
+      # 运行工具
+      - name: Github Release create, update, and upload assets
+        if: env.tVer == env.cVer
+        uses: meeDamian/github-release@v2.0.3
+        with:
+          token:  ${{ secrets.GITHUB_TOKEN }}
+          tag: v0.0.0
+          name: test
+          body: '下载链接：\n 111 {{ env.tVer }}'
+
